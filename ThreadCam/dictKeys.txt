@@ -1,0 +1,43 @@
+threadingToolValues
+	toolNumber		F
+	velocity		F
+	PDX				F
+	NAP				F
+	insertID
+	unitID
+	clampingID
+groovingToolValues
+	toolNumber		F
+    velocity		F
+    toolWidth		F
+    numberPasses	F
+    insertID
+    unitID
+	clampingID
+threadDataValues
+	threadLength	F
+    frontAngle		F
+    frontLength		F
+    diameter		F
+	backAngle		F
+    backLength		F
+    TPI				F
+	measure
+miscDataValues
+	safePointX		F
+	safePointZ      F
+	safeEndZ        F
+	retract         F
+	zShift          F
+	followThrough   F
+
+self
+	units           F
+	threadEnd       F
+	startPoint      F
+	feed            F
+	threadPasses    [F]
+	groovingPasses  [F]
+	threadingRPM    F
+	groovingRPM     F
+	pitch			F

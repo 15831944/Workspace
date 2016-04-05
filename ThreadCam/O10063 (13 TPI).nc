@@ -1,0 +1,241 @@
+%
+O10063
+(Program: Weld-On Thread Adapter)
+(Date: 2016-03-17)
+(Drawing Number: CNMC1005-D7)
+(Revision Number: A)
+(Machine: )
+(Material: Pre-machined part)
+(Material MC Code: P1.2.Z.AN)
+(Material Hardness: 150Bhn)
+(Fixturing: Soft jaws)
+(Operation: 4 of 4)
+(Setup Instructions:)
+(Programmer: Stephane Drouin-Moreland)
+
+G20 G40 G80 G99;
+
+G50 S4000;
+
+G28;
+T0101;
+
+(Operation: Rough Face and OD)
+(Clamping Unit ID: )
+(Cutting Unit ID: C4-DCLNR 27050-12)
+(Insert ID: CNMG-432 PM 4325)
+(Vc: 990sfm)
+(Fn: 0.05-0.0118in/rev)
+
+(Rough face)
+G96 S990 M03;
+G00 G54 Z1.0;
+X2.1 ;
+Z0.05 M08;
+G72 P01 Q02 D0.0313 W0.0156 F0.0118;	
+	N01;
+	G00 Z0;
+	G01 X1.05  F0.004;
+	Z0.1
+	N02;
+
+(Rough OD)
+G00 X2.1 Z0.1;
+G71 P03 Q04 D0.079 U0.0313 F0.0118;
+	N03;
+	G01 G42 X1.6282 W0 F0.004;
+	Z0;
+	X1.7522 Z-0.0613;
+	Z-0.7068;
+	X1.6 Z-0.87;
+	Z-1.12;
+	X1.91 Z-1.4524;
+	G40 X2.1;
+	N04;
+
+G28 X2.1 M09;
+G28;
+M01;
+
+G28;
+T0303;
+
+(Operation: Finish Face and OD)
+(Clamping Unit ID: )
+(Cutting Unit ID: C4-DDJNR-27050-11)
+(Insert ID: DNMG-331 PF 4325)
+(Vc: 990)
+(Fn: 0.004)
+
+(Finish Face and OD cycles)
+G96 S990 M03;
+G00 G54 Z1.0;
+X2.1 ;
+Z0.1 M08;
+(Finish cycle facing)
+G70 P01 Q02;
+
+X2.1 Z0.1;
+(Finish cycle OD)
+G70 P03 Q04;
+
+G28 X3.0 M09;
+G28;
+M01;
+
+G28;
+T0505;
+
+(Operation: Finish ID)
+(Clamping Unit ID: )
+(Cutting Unit ID: C4-SCLCR-13080-09)
+(Insert ID: CCMT 3|2.5|1 PF4225)
+(Vc: 990)
+(Fn: 0.0043)
+
+(Finish ID)
+G96 S990 M03;
+G00 G54 Z1.0;
+X2.1;
+Z0.1 M08;
+(Finish cycle ID)
+X1.24;
+G01 G41 Z0 F0.004;
+X1.16 Z-0.04;
+Z-1.91;
+X1.0;
+G00 G40 Z0.1;
+
+G28 X3.0 M09;
+G28;
+M01;
+
+G28;
+T0707;
+
+(Operation: Thread)
+(Clamping Unit ID: )
+(Cutting Unit ID: C4-266RFG-27050-16)
+(Insert ID: 266RG-16UN01C120M)
+(Vc: 610)
+(RPM: 1333)
+(Fn: 0.076923)
+
+(Thread)
+G97 S1333 M03;
+G00 G54 Z1.0000;
+X2.1000 M24;
+Z0.2120 M08;
+
+G92 X1.7276 Z-1.0000 F0.076923;
+X1.7105;
+X1.6949;
+X1.6829;
+X1.6728;
+X1.6638;
+X1.6558;
+
+G80;
+
+G28 X3.0000 M09;
+G28;
+M01;
+
+G28;
+T0909;
+
+(Operation: Clip Thread)
+(Clamping Unit ID: )
+(Cutting Unit ID: C4-RF123G20-27060B)
+(Insert ID: N123G2-0310-0002-GF 1125)
+(Vc: 620)
+(RPM: 1355)
+(Fn: 0.076923)
+
+(Clip Thread)
+G97 S1355 M03;
+G00 G54 Z1.0000;
+X2.1000
+Z0.2710 M08;
+
+(Front)
+X1.7167;
+G32 Z-0.0870 F0.076923;
+X1.8000 Z-0.1286;
+G00 Z0.2710;
+
+X1.6906;
+G32 Z-0.0870 F0.076923;
+X1.8000 Z-0.1417;
+G00 Z0.2710;
+
+X1.6667;
+G32 Z-0.0870 F0.076923;
+X1.8000 Z-0.1536;
+G00 Z0.2710;
+
+X1.6484;
+G32 Z-0.0870 F0.076923;
+X1.8000 Z-0.1628;
+G00 Z0.2710;
+
+(Back)
+G00 X1.8000
+
+G32 Z-0.6878 F0.076923;
+X1.7167 Z-0.7771;
+X1.7167 Z-1.0000;
+G00 X1.8000 Z-1.0000;
+Z-0.4694;
+
+G32 Z-0.6598 F0.076923;
+X1.6906 Z-0.7771;
+X1.6906 Z-1.0000;
+G00 X1.8000 Z-1.0000;
+Z-0.4694;
+
+G32 Z-0.6342 F0.076923;
+X1.6667 Z-0.7771;
+X1.6667 Z-1.0000;
+G00 X1.8000 Z-1.0000;
+Z-0.4694;
+
+G32 Z-0.6145 F0.076923;
+X1.6484 Z-0.7771;
+X1.6484 Z-1.0000;
+G00 X1.8000 Z-1.0000;
+Z-0.4694;
+
+G28 U0 M09
+G28
+M01
+
+G28;
+T0707;
+
+(Operation: Thread - Last Pass)
+(Clamping Unit ID: )
+(Cutting Unit ID: C4-266RFG-27050-16)
+(Insert ID: 266RG-16UN01C120M)
+(Vc: 610)
+(RPM: 1333)
+(Fn: 0.076923)
+
+(Thread)
+G97 S1333 M03;
+G00 G54 Z1.0000;
+X2.1000 M24;
+Z0.2120 M08;
+
+G92 X1.6484 Z-1.0000 F0.076923;
+
+G80;
+
+G28 X3.0000 M09;
+G28;
+M01;
+
+
+
+M30;
+%
