@@ -15,15 +15,14 @@ G28;
 
 (Operation: End Mill First End)
 (Holder: Short ER32 Collet Chuck)
-(Cutting Unit: ½ x ½ HSS 2fl End Mill)
+(Cutting Unit: 1/2 x 1/2 HSS 2fl End Mill)
 (RPM: 7500)
 (IPM: 61.5)
 
 T05 M06;
 S7500 M03;
 
-
-G00 X5.0 Y-1.0;
+G00 G54 X5.0 Y-1.0;
 G43 H05 Z1.0;
 
 Z-0.75 M08;
@@ -63,7 +62,6 @@ T6 M06;
 
 T05 M06;
 S7500 M03;
-
 
 G00 X5.0 Y-1.0;
 G43 H05 Z1.0;
@@ -169,7 +167,7 @@ T07 M06;
 S599 M03;
 G00 X2.0 Y4.5;
 G43 H07 Z1.0 M08;
-G81 G98 Z-0.7878 R0.1 F4.24;
+G81 G98 Z-0.7878 R0.1 F7.55;
 G80 M09;
 
 T08 M06;
@@ -227,3 +225,76 @@ Y6.5;
 G53 Z0;
 
 M01;
+
+(Operation: Drill Square Pocket Start)
+(Holder: Precision Drill Chuck)
+(Cutting Unit: 5/8 Jobber Drill)
+(RPM: 599)
+(IPM: 7.55)
+
+T07 M06;
+S599 M03;
+
+(Y|G55| = Y|G54| + 6.0)
+G00 G55 X2.0 Y-2.0625;
+G43 H07 Z1.0 M08;
+
+G81 G98 Z-0.37 R0.1 F4.24;
+
+G53 Z0;
+
+M01;
+
+(Operation: Mill Circular Pocket)
+(Holder: Short ER32 Collet Chuck)
+(Cutting Unit: 1/2 x 1/2 HSS 2fl End Mill)
+(RPM: 7500)
+(IPM: 61.5)
+
+T05 M06;
+S7500 M03;
+
+G00 X2.0 Y-5.8;
+G43 H05 Z1.0 M08;
+
+G13 D05 I0.56 K1.0625 Q0.25 Z0.2 F61.5;
+
+(Operation: Mill Square Pocket)
+
+G00 X2.0 Y-2.0625;
+
+G83 Z-0.38 R-0.19 Q0.05 P0.25 F61.5;
+
+Z0.1;
+G01 Z-0.25 F61.5;
+
+M98 P10065 L1;
+
+
+
+O10065;
+
+(Square Pocket Mill Rough)
+
+G91;
+
+G03 I0.125 J0 X0.25 F1.89;
+G03 I-0.25 J0 X-0.25 Y-0.25;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
