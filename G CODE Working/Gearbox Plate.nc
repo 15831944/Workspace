@@ -269,6 +269,7 @@ G150 G41 D05 P10069 R0.1 Q0.25 Z-0.38 K0.03 J0.25;
 
 (Operation: Mill Contour)
 
+(Offset modification for finishing pass)
 G10 G91 L12 P5 R0.40
 G90;
 
@@ -305,6 +306,7 @@ Y1.0;
 G00 G40 X5.0;
 Y-1.3712;
 
+(Return offset for final pass)
 G10 G91 L12 P5 R-0.40
 G90;
 
