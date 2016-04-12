@@ -153,28 +153,28 @@ M01;
 
 (Operation: Drill Various)
 (Holder: Precision Drill Chuck)
-(Cutting Unit: 5/8 Jobber Drill)
-(RPM: 599)
+(Cutting Unit: 37/64 Jobber Drill)
+(RPM: 648)
 (IPM: 7.55)
-(Cutting Unit: "C" Jobber Drill)
+(Cutting Unit: "C" Stub Drill)
 (RPM: 1547)
-(IPM: 10.52)
+(IPM: 12.07)
 (Cutting Unit: 5/16 Jobber Drill)
 (RPM: 1198)
 (IPM: 10.42)
 
 T07 M06;
-S599 M03;
+S648 M03;
 G00 X2.0 Y4.5;
 G43 H07 Z1.0 M08;
-G81 G98 Z-0.7878 R0.1 F7.55;
+G81 G98 Z-0.7878 R0.1 F7.9;
 G80 M09;
 
 T08 M06;
 S1547 M03;
 G00 X2.0 Y4.5;
 G43 H07 Z1.0 M08;
-G81 Z-0.6727 R0.1 F10.52 L0;
+G81 Z-0.6727 R0.1 F12.07 L0;
 G70 I0.75 J60.0 L3
 G80 M09;
 
@@ -233,13 +233,13 @@ M01;
 (IPM: 7.55)
 
 T07 M06;
-S599 M03;
+S648 M03;
 
 (Y|G55| = Y|G54| + 6.0)
 G00 G55 X2.0 Y-2.0625;
 G43 H07 Z1.0 M08;
 
-G81 G98 Z-0.37 R0.1 F4.24;
+G81 G98 Z-0.37 R0.1 F7.9;
 
 G53 Z0;
 
@@ -254,7 +254,7 @@ M01;
 T05 M06;
 S7500 M03;
 
-G00 X2.0 Y-5.8;
+G00 X2.0 Y-4.5;
 G43 H05 Z1.0 M08;
 
 G13 D05 I0.56 K1.0625 Q0.25 Z0.2 F61.5;
@@ -270,10 +270,11 @@ G150 G41 D05 P10069 R0.1 Q0.25 Z-0.38 K0.03 J0.25;
 (Operation: Mill Contour)
 
 (Offset modification for finishing pass)
-G10 G91 L12 P5 R0.40
+G01 G40 X7.0 Y-1.111 F61.5;
+
+G10 G91 L12 P5 R0.04
 G90;
 
-G01 G40 X7.0 Y-1.111 F61.5;
 Z-0.1
 G41 D05 X5.5494;
 X3.322 Y0.175;
@@ -307,7 +308,7 @@ G00 G40 X5.0;
 Y-1.3712;
 
 (Return offset for final pass)
-G10 G91 L12 P5 R-0.40
+G10 G91 L12 P5 R-0.04
 G90;
 
 G01 G41 D05 X4.063 Y-0.8302;
@@ -322,7 +323,82 @@ G03 I0 J0.375 X3.813 Y-5.425;
 G01 Y-0.6858;
 Y1.0;
 
-G53 G40 Z0;
+G40 Y2.0;
+G53 Z0;
+
+M01;
+T14 M06;
+
+(Operation: Fine Bore Hole)
+(Holder: C-Style Arbor)
+(Cutting Unit: Coromant Capto Fine Boring Head)
+(RPM: 2094)
+(IPM: 12.55)
+
+S2094 M03;
+
+G00 X2.0 Y-1.5;
+G43 H14 Z1.0 M08;
+
+G76 Q0.2 R-0.1 Z-0.6 F12.55;
+
+G53 Z0;
+
+M01;
+T12 M06;
+
+(Operation: Chamfer Edges)
+(Holder: Short ER32 Collet Chuck)
+(Cutting Unit: 8mm CoroMill Plura Chamfering End Mill)
+(RPM: 7500)
+(IPM: 30.0)
+(-0.050 - Chamfer Width - Depth)
+(Set tool diameter offset to 0.1)
+
+S7500 M03;
+
+G00 X2.0 Y-1.5;
+G43 H12 Z1.0 M08;
+
+(Chamfer bore)
+Z-0.28;
+G01 G41 D12 Y-4.185 F30.0;
+G03 I0 J-0.345;
+G01 Y-4.5;
+
+(Chamfer circle)
+Z-0.06;
+Y-3.4219;
+G03 I0 J-1.0781;
+G01 Y-4.5;
+
+G00 Z0.5;
+
+(Chamfer square pocket)
+X2.0 Y-2.0625;
+Z-0.06;
+M98 P10069 L1;
+G01 X1.75;
+Y-2.0625;
+
+G00 Z0.5;
+
+(Chamfer contour)
+G00 X4.063 Y-0.8302;
+Z-0.6;
+G01 X3.813 Y-0.6858;
+X3.188 Y-0.325;
+X0.75;
+G03 I0 J-0.5 X0.25 Y-0.825;
+G01 Y-5.55;
+X0.5 Y-5.8;
+X3.438;
+G03 I0 J0.375 X3.813 Y-5.425;
+G01 Y-0.6858;
+Y1.0;
+
+G40 Y2.0;
+G53 Z0;
 
 M30;
 
