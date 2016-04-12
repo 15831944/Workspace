@@ -41,7 +41,7 @@ T13 M06;
 
 (Remove part from vise)
 
-G00 X2.0 Y6.187; (6.0 + Dowel pin radius)
+G00 X2.0 Y6.187; (Modify 6.0 + Dowel pin radius)
 G43 H13 Z-0.5;
 
 M00;
@@ -106,7 +106,7 @@ T13 M06;
 
 (Remove part from vise)
 
-G00 X2.0 Y-0.187; (- Dowel pin radius)
+G00 X2.0 Y-0.187; (Modify 0 - Dowel pin radius)
 G43 H13 Z-0.5;
 
 M00;
@@ -214,7 +214,7 @@ T13 M06;
 
 (Remove part from vise)
 
-G00 X2.0 Y6.187; (- Dowel pin radius)
+G00 X2.0 Y6.187; (Modify 6.0 + Dowel pin radius)
 G43 H13 Z-0.5;
 
 M00;
