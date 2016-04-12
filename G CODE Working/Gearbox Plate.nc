@@ -39,14 +39,14 @@ G53 Y0;
 M00;
 T13 M06;
 
-(Remove part from vice)
+(Remove part from vise)
 
 G00 X2.0 Y6.187; (6.0 + Dowel pin radius)
-G43 H09 Z-0.5;
+G43 H13 Z-0.5;
 
 M00;
 
-(Flip part and return to vice)
+(Flip part and return to vise)
 
 Y6.5;
 G53 Z0;
@@ -89,7 +89,7 @@ T3 M06;
 S3247 M03;
 
 G00 X3.0 Y-1.52;
-G43 H07 Z1.0;
+G43 H03 Z1.0;
 Z0;
 
 G01 X2.0 F175.33;
@@ -104,10 +104,10 @@ G53 Y0;
 M00;
 T13 M06;
 
-(Remove part from vice)
+(Remove part from vise)
 
 G00 X2.0 Y-0.187; (- Dowel pin radius)
-G43 H09 Z-0.5;
+G43 H13 Z-0.5;
 
 M00;
 
@@ -173,7 +173,7 @@ G80 M09;
 T08 M06;
 S1547 M03;
 G00 X2.0 Y4.5;
-G43 H07 Z1.0 M08;
+G43 H08 Z1.0 M08;
 G81 Z-0.6727 R0.1 F10.52 L0;
 G70 I0.75 J60.0 L3
 G80 M09;
@@ -212,10 +212,10 @@ G53 Z0;
 M00;
 T13 M06;
 
-(Remove part from vice)
+(Remove part from vise)
 
 G00 X2.0 Y6.187; (- Dowel pin radius)
-G43 H09 Z-0.5;
+G43 H13 Z-0.5;
 
 M00;
 
