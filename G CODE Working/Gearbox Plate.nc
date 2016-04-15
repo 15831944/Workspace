@@ -333,14 +333,14 @@ T14 M06;
 (Holder: C-Style Arbor)
 (Cutting Unit: Coromant Capto Fine Boring Head)
 (RPM: 2094)
-(IPM: 12.55)
+(IPM: 11.73)
 
 S2094 M03;
 
 G00 X2.0 Y-1.5;
 G43 H14 Z1.0 M08;
 
-G76 Q0.2 R-0.1 Z-0.6 F12.55;
+G76 Q0.2 R-0.1 Z-0.6 F11.73;
 
 G53 Z0;
 
@@ -351,7 +351,7 @@ T12 M06;
 (Holder: Short ER32 Collet Chuck)
 (Cutting Unit: 8mm CoroMill Plura Chamfering End Mill)
 (RPM: 7500)
-(IPM: 30.0)
+(IPM: 11.25)
 (-0.050 - Chamfer Width - Depth)
 (Set tool diameter offset to 0.1)
 
@@ -362,7 +362,7 @@ G43 H12 Z1.0 M08;
 
 (Chamfer bore)
 Z-0.28;
-G01 G41 D12 Y-4.185 F30.0;
+G01 G41 D12 Y-4.185 F11.25;
 G03 I0 J-0.345;
 G01 Y-4.5;
 
