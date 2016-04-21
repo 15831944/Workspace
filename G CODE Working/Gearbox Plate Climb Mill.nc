@@ -109,7 +109,7 @@ G43 H09 Z-0.5;
 
 M00;
 
-(Datum A down, Datum C against the fixed jaw, Datum B against the pin)
+(Datum A down, Datum C against the fixed jaw, Datum B facing operator)
 
 Y6.5;
 G53 Z0;
@@ -121,7 +121,7 @@ T01 M06;
 G00 X2.0 Y-0.3;
 Z-0.2;
 
-(--Insert G54 probing cycle here--)
+G65 P9023 A7. S54;
 
 G53 Z0;
 
@@ -243,7 +243,7 @@ T01 M06;
 G00 X2.0 Y6.3;
 Z-0.2;
 
-(--Insert G55 probing cycle here--)
+G65 P9023 A8. S55.;
 
 G53 Z0;
 
@@ -281,7 +281,7 @@ S7500 M03;
 G00 X2.0 Y-4.5 M08;
 G43 H05 Z1.0;
 
-G13 D05 I0.56 K1.0625 Q0.25 Z0.2 F61.5;
+G13 D05 I0.56 K1.0625 Q0.15 Z0.2 F61.5;
 G00 Z0.5;
 
 (Operation: Mill Square Pocket)
@@ -290,7 +290,7 @@ X2.0 Y-2.0625;
 
 G83 Z-0.38 R-0.19 Q0.05 P0.2 F61.5;
 
-G150 G41 D05 P10069 R0.1 Q0.25 Z-0.38 K0.03 J0.25;
+G150 G41 D05 P10069 R0.1 Q0.25 Z-0.38 K0.03 J0.15;
 
 (Operation: Mill Contour)
 
